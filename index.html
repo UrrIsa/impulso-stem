@@ -13,16 +13,16 @@
     <nav class="navbar">
         <a class="navLogo" href="#" data-goto="home"> Impulso STEM </a> <!-- ancla para la navegacion, href="#" para autoreferencia, creamos la info personalizada con data- y le llamamos destino con valor home-->
 
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <!--<button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
             <span></span><span></span><span></span>
-        </button>
+        </button>-->
 
         <ul class="navLinks">
             <li><a href="#" data-page="home">Home</a></li>
-            <li><a href="#" data-page="portfolio">Sobre nosotros</a></li>
+            <!--<li><a href="#" data-page="portfolio">Sobre nosotros</a></li>
             <li><a href="#" data-page="presentations">Voluntariado</a></li>
             <li><a href="#" data-page="publications">Blog</a></li>
-            <li><a href="#" data-page="teaching">Contacto</a></li>
+            <li><a href="#" data-page="teaching">Contacto</a></li>-->
         </ul>
         <button class="navMenuBtn">☰</button>
     </nav>
@@ -33,15 +33,23 @@
         <!-- [ US ] -->
         <div class="us">
             <div class="usTextCol">
-                <h1 class="usName"> Impulso STEM </h1>
+                <div class="kicker"><span class="dot"></span> CIENCIA - DIVULGACIÓN</div>
+                <h1 class="usName"> Impulso <span>STEM</span> </h1>
 
                 <p class="usDesc">
                     Somos una Colectividad Juvenil Autogestiva integrada por estudiantes y egresados universitarios de distintas disciplinas que comparten el propósito de acercar la ciencia, la tecnología, la ingeniería y las matemáticas (STEM) a niñas, niños, adolescentes y jóvenes.
                 </p>
 
+                <p class="usDesc"> Si necesitas contactarnos puede ser en nuestra cuenta de ig @impulso.stem</p>
+
                 <div class="usCTAs">
-                    <a class="btn btnPrimary" href="#" data-goto="portfolio"> Ver Portfolio</a>
-                    <a class="btn btnGhost" href="#" data-goto="cv"> Ver CV</a>
+                    <a class="btn btnPrimary" href="#" data-goto="portfolio"> Disponibles para colaborar</a>
+                    <a class="btn btnGhost" href="#" data-goto="cv"> Oportunidades de Voluntariado</a>
+                </div>
+
+                <!--FALTA : scroll hint-->
+                <div style="margin-top: 50px;">
+                    Scroll hint 
                 </div>
             </div>
 
@@ -49,13 +57,67 @@
                 <div class="usBGShape"></div>
 
                 <div class="usPhotoWrap">
-                    <img src="./statics/logo.jpeg" alt="Urri" onerror="this.style.background='#1e1e1e'; this.src=''">
+                    <img src="./statics/img/logo.jpeg" alt="Urri" onerror="this.style.background='#1e1e1e'; this.src=''">
                 </div>
             </div>
 
+
         </div> <!-- Termina [ US ] -->
 
-    
+        <!--[ PROYECTOS ]-->
+        <div class="wrap">
+            <div class="kicker"><span class="dot"></span> TRABAJO RECIENTE</div>
+
+            <h1>Proyectos <span>destacados</span></h1>
+            <p class="sub"> Fichas de laboratorio : de divulgación científica a juegos de terminal, pasando por análisis de datos biológicos.</p>
+
+            <div class="grid">
+                <article class="card" data-link="https://www.instagram.com/impulso.stem/">
+                    <div class="holes"><span></span><span></span></div>
+
+                    <div class="cardTop">
+                        <span class="stamp sci">DIVULGACIÓN</span>
+                        <span class="cardId">FILE-01</span>
+                    </div>
+
+                    <h2>Impulso STEM </h2>
+                    <p>Cuenta enfocada a comunicar investigación científica y de áreas STEM de forma accesible.
+                        Complemento a esta página, puesto que son publicaciones en instagram.
+                    
+                    </p>
+                    
+                    <div class="cardFoot">
+                        <span class="filed">en curso - 2026</span>
+                        <span class="open">-></span>
+                    </div>
+                </article>
+
+
+                <article class="card" data-link="https://www.instagram.com/urri.php/">
+                    <div class="holes"><span></span><span></span></div>
+
+                    <div class="cardTop">
+                        <span class="stamp web">DIVULGACIÓN</span>
+                        <span class="cardId">FILE-02</span>
+                    </div>
+
+                    <h2>urri.php </h2>
+                    <p>
+                        Cuenta de un miembro del equipo para creación de contenido y divulgación relacionada a computación y biología.
+
+                        Uso de reels y publicaciones para explicar experiencias de estudiantes y conceptos generales.
+
+                    </p>
+                    
+                    <div class="cardFoot">
+                        <span class="filed">en curso - 2026</span>
+                        <span class="open">-></span>
+                    </div>
+                </article>
+
+            </div>
+
+        </div> <!-- Termina [ PROYECTOS ] -->
 
         <footer>
             <span>© <span id="year"></span> Impulso STEM</span>
@@ -68,6 +130,12 @@
     <script>
         // Obtiene el año actual del sistema y lo inserta en el elemento con id="year"
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.querySelectorAll('.card[data-link]').forEach(card => {
+  card.addEventListener('click', () => {
+    window.open(card.dataset.link, '_blank', 'noopener,noreferrer');
+  });
+});
     </script>
 
 </body>

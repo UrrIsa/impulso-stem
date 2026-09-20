@@ -18,6 +18,8 @@
     --fontDisplay : 'Luckiest Guy', cursive;
 
     --radius: 14px ; 
+
+    
     /*--bg: #242424 ;*/
     /*--surface: #151515 ;
     --border: #6e6c6c ;
@@ -40,6 +42,20 @@
 
     
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1) ;*/
+
+
+    --lavender:#eef0fb;
+    --lavender-2 : #f6f4fe;
+    --indigo-deep: #1e1b6b;
+    --navy:#201c4d;
+    --navy-soft:#514c85;
+    --violet:#8b5cf6;
+    --teal:#17a6a0;
+    --sun:#f5b83d;
+    --coral:#ef6f6f;
+    --rule:#d7d4f2;
+    --hole:#dcd9f5;
+    --hole-shadow:#b9b3e6;
 }
 
 /* ---------------- |~ RESET ---------------- */
@@ -164,6 +180,7 @@ img {
     display: grid ;
     grid-template-columns: 1fr 1fr ; /*define un contenedor grid con columnas del mismo width, 1fraccion y 1 fraccion (osea 1/2 y 1/2 de la pantalla)*/
     padding-top: 80px ;
+    padding-left: 7%;
     position: relative ;
     overflow: hidden ; /*lo de ocultar el desbordamiento horizontal*/
 }
@@ -172,7 +189,7 @@ img {
     display: flex ;
     flex-direction: column ; /*stackea verticalmente*/
     justify-content: center ;
-    padding: 80px 58px 80px 90px;
+    padding: 80px 58px 80px 6% ;
     position: relative ;
     z-index: 2 ;
 }
@@ -180,7 +197,7 @@ img {
 .usName{
     font-family: var(--fontMono) ;
     font-size: clamp(40px, 6vw, 90px) ; /*el de enmedio es el punto de cambio, hace un tope, para que lo minimo sea 40px y lo maximo 90px, si está en el rango tomará lo que sea, por ejemplo, si el contenedor mide 100 el 60% es 60px, lo cual es mayor de 40px pero menos de 90px asi que se queda en 60, si es 200 el 60% es 120, lo cual es mayor a 90px asi que se queda en 90*/
-    font-weight: 900;
+    font-weight: 900 ;
     line-height: 0.92 ; /*interlineado, en 0 se sobreponen*/
     text-transform: uppercase ;
     letter-spacing: -0.02em ;
@@ -212,7 +229,7 @@ img {
     text-transform: uppercase ;
     border: none ;
     border-radius: var(--radius) ;
-    transition: transform 0.2s ease, box-shadow 0.2 ease;
+    transition: transform 0.2s ease, box-shadow 0.2 ease ;
     position: relative ;
     overflow: hidden ;
 }
@@ -220,8 +237,8 @@ img {
     transform: translateY(-2px) ;
 }
 .btnPrimary{
-    background-color: var(--purple);
-    color: var(--cream);
+    background-color: var(--purple) ;
+    color: var(--cream) ;
     font-weight: 700 ;
 }
 .btnPrimary:hover{
@@ -230,10 +247,10 @@ img {
 .btnGhost{
     background: rgba(120, 24, 237, 0.312) ;
     color: var(--text );
-    border: 1px solid rgba(116, 24, 237, 0.525); /*mejor visualización*/
+    border: 1px solid rgba(116, 24, 237, 0.525) ; /*mejor visualización*/
 }
 .btnGhost:hover{
-    box-shadow: 0 8px 30px rgba(140, 59, 245, 0.35);
+    box-shadow: 0 8px 30px rgba(140, 59, 245, 0.35) ;
 }
 
 
@@ -251,7 +268,7 @@ img {
     position: absolute ;
     inset: 0 ; /*shorthand de posición relativa*/
     transform: scale(1.2);
-    background : radial-gradient(ellipse at 55% 50%, rgba(89, 0, 255, 0.126) 0%, transparent 65%);
+    background : radial-gradient(ellipse at 55% 50%, rgba(89, 0, 255, 0.126) 0%, transparent 65%) ;
 
     
 
@@ -263,6 +280,7 @@ img {
     z-index: 2 ;
     width: 340px ;
     height: 400px ;
+    right: 5%;
 }
 
 .usPhotoWrap img{
@@ -272,5 +290,201 @@ img {
     transform: scale(1.5);
     /* Para cuadar un poco mejor */
     position: relative ;
-    right: 5%;
+    right: 6% ;
+}
+
+
+/* --------------- |~ PROYECTOS DESTACADOS  ----------------- */
+.wrap{
+    
+    margin: 0 auto ;
+    padding: 80px 12% 110px ;
+    position: relative ;
+    overflow: hidden ;
+    
+}
+
+
+.kicker{
+    display: flex ;
+    align-items: center ;
+    gap : 15px ;
+    font-family: monospace ;
+    font-size: 12.5px ;
+    font-weight: 600 ;
+    letter-spacing: 1em  ;
+    color: var(--electric) ;
+    margin-bottom: 16px ;
+}
+
+.dot{
+    width: 7px ;
+    height: 7px ;
+    border-radius: 50% ;
+    background-color: var(--electric) ;
+}
+h1{
+    font-family: var(--fontMono) ;
+    font-weight: 700 ;
+    font-size: clamp(36px, 5.4vw, 55px) ;
+    line-height: 1.2 ;
+    color: var(--navy) ;
+}
+h1 span{
+    color: var(--electric) ;
+}
+
+.sub{
+    
+    font-family:  var(--fontMono) ;
+    font-size: 15px ;
+    line-height: 1.65 ;
+    color: var(--navy-soft) ;
+    margin:0 0 52px ;
+}
+.grid{
+    display: grid ;
+    grid-template-columns: repeat(12,1fr) ;
+    gap: 24px 22px ;
+}
+.card{
+    grid-column: span 6;
+    position: relative ;
+    background-color: white ;
+    border: 2px solid var(--indigo-deep) ;
+    border-radius: 20px ;
+    padding: 26px 24px 22px ;
+    transform: rotate(var(--rot, 0deg)) ;
+    transition: transform .3 ease, box-shadow .3 ease;
+    box-shadow: 5px 6px 0 var(--indigo-deep) ;
+    cursor: pointer ;
+}
+  .card:nth-child(1){ --rot:-0.8deg; }
+  .card:nth-child(2){ --rot:0.6deg;  }
+  .card:nth-child(3){ --rot:0.5deg;  grid-column:span 7; }
+  .card:nth-child(4){ --rot:-0.5deg; grid-column:span 5; }
+  .card:nth-child(5){ --rot:-0.4deg; grid-column:span 5; }
+  .card:nth-child(6){ --rot:0.7deg;  grid-column:span 7; }
+
+
+.card:hover, .card:focus-within{
+    transform: rotate(0deg) translate(-2px, -6px) ;
+    box-shadow: 8px 12px 0 var(--indigo-deep) ;
+    z-index: 2 ;
+}
+.card:focus-within{
+    outline: 3px solid var(--violet) ;
+    outline-offset: 3px ;
+
+}
+.holes{
+    position: absolute ;
+    top: 16px ;
+    left: 18px ;
+    display: flex ;
+    gap: 8px ;
+}
+.holes span{
+    width: 10px ;
+    height: 10px ;
+    border-radius: 50% ;
+    background: var(--hole );
+    box-shadow: inset 0 1px 2px var(--hole-shadow) ;
+}
+.cardTop{
+    display: flex ;
+    justify-content: space-between ;
+    align-items: flex-start ;
+    margin-bottom: 3% ;
+}
+.stamp{
+    font-family: var(--fontMono) ;
+    font-size: 11px ;
+    font-weight: 600 ;
+    letter-spacing: 0.4em ;
+    color: white ;
+    padding: 5px 11px ;
+    border-radius: 999px ;
+    transform: rotate(-3deg) ;
+    display: inline-block ;
+    margin-top: 4px;
+}
+
+/*CAMBIAR DATOS*/
+  .stamp.cs   { background:var(--electric); }
+  .stamp.data { background:var(--coral); }
+  .stamp.sys  { background:var(--teal); }
+  .stamp.sci  { background:var(--violet); }
+  .stamp.web  { background:var(--sun); color:var(--navy); }
+
+.cardId{
+    font-size: 11px ;
+    color: var(--navy-soft) ;
+    opacity: 0.5;
+}
+
+.card h2{
+    
+    font-weight: 600 ;
+    font-size: 22px ;
+    margin: 0 0 10px ;
+    color: var(--navy);
+}
+
+.card p{
+    font-size: 14px ;
+    line-height: 1.65 ;
+    color: var(--navy-soft);
+    margin: 0 0 22px ;
+}
+.cardFoot{
+    display: flex ;
+    align-items: center ;
+    justify-content: space-between ;
+    border-top: 2px dashed var(--rule);
+    padding-top: 14px ;
+}
+.filed{
+    font-size: 11px ;
+    color: var(--navy-soft) ;
+    letter-spacing: 0.2em ;
+}
+
+.open{
+    width: 32px ;
+    height: 32px ;
+    border: 1px solid var(--violet) ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    font-size: 14px ;
+    background: transparent ;
+    transition: background .2s ease color .2s ease, tranform 2s ease, border-color .2s ease ;
+    transform: rotate(-45deg) ;
+    border-radius: 50%;
+}
+.card:hover .open{
+    background-color: var(--electric) ;
+    color: white ;
+    transform: rotate(0deg) ;
+}
+.card:hover .stamp{
+    transform: rotate(0deg) ;
+}
+
+
+
+
+footer{
+    background: var(--lavender);
+    display: flex ;
+    justify-content: space-between ;
+    align-items: flex-start ;
+    padding: 20px ;
+}
+
+footer span{
+    width: 200px ;
+    margin-left: 3%;
+    margin-right: 3%;
 }
